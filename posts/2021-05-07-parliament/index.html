@@ -1,0 +1,171 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<meta http-equiv=content-language content="en">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<title>What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data. &#183; Thundr</title>
+<meta name=title content="What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data. &#183; Thundr">
+<meta name=description content="Linked Data Solutions.">
+<link rel=canonical href=/posts/2021-05-07-parliament/>
+<link type=text/css rel=stylesheet href=/css/schemes/thundr.min.ff17c50528c7a4a8a8bb8ec41272d63eb936ecefb9ccfa6db45cd1f5cd8b1becf8606745f751ee0d322ac80c9cb96e58aa699b38aa44cff9d2a8b3ff4f05a7b5.css integrity="sha512-/xfFBSjHpKiou47EEnLWPrk27O+5zPpttFzR9c2LG+z4YGdF91HuDTIqyAycuW5YqmmbOKpEz/nSqLP/TwWntQ==">
+<link type=text/css rel=stylesheet href=/css/compiled/main.min.4076b9cf114dd23cca017f3365e2205a4c9a4b2c0ef4193ccd08883f76e554aa40f674a8f6e77a1b2895be0975ba8e019b0c59996c2eea32e4970ca4d5221653.css integrity="sha512-QHa5zxFN0jzKAX8zZeIgWkyaSywO9Bk8zQiIP3blVKpA9nSo9ud6GyiVvgl1uo4BmwxZmWwu6jLklwyk1SIWUw==">
+<link type=text/css rel=stylesheet href=/css/custom.min.1ebe0b95d80f7f19fcd3cf833e0f7d9aab1f2ea5ff4eaf8cdb32036c41ea7eed92881f8cebb592931cc84f804ece58617827023de3e06af17bf4fb785d23d971.css integrity="sha512-Hr4LldgPfxn808+DPg99mqsfLqX/Tq+M2zIDbEHqfu2SiB+M67WSkxzIT4BOzlhheCcCPePgavF79Pt4XSPZcQ==">
+<script>localStorage.removeItem("preferredAppearance")</script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<meta property="og:title" content="What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data.">
+<meta property="og:description" content="The last few weeks we’ve been working on a project for the Datavisualisation course of Bart Mesuere along with four fellow students. Over the course of 12 weeks we’ve developed a Scraper/API and built a number of very interesting visualizations on the Chamber of Representatives of our Federal Parliament. In this post we&rsquo;ll go into detail about the data and story behind this project.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/2021-05-07-parliament/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-05-07T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-05-07T00:00:00+00:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data.">
+<meta name=twitter:description content="The last few weeks we’ve been working on a project for the Datavisualisation course of Bart Mesuere along with four fellow students. Over the course of 12 weeks we’ve developed a Scraper/API and built a number of very interesting visualizations on the Chamber of Representatives of our Federal Parliament. In this post we&rsquo;ll go into detail about the data and story behind this project.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","articleSection":"Blog Posts","name":"What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data.","headline":"What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data.","description":"The last few weeks we’ve been working on a project for the Datavisualisation course of Bart Mesuere along with four fellow students. Over the course of 12 weeks we’ve developed a Scraper\/API and built a number of very interesting visualizations on the Chamber of Representatives of our Federal Parliament. In this post we\u0026rsquo;ll go into detail about the data and story behind this project.","inLanguage":"en","author":{"@type":"Person","name":"Laurens Debackere"},"creator":{"@type":"Person","name":"Laurens Debackere"},"copyrightHolder":"Laurens Debackere","copyrightYear":"2021","dateCreated":"2021-05-07T00:00:00\u002b00:00","datePublished":"2021-05-07T00:00:00\u002b00:00","dateModified":"2021-05-07T00:00:00\u002b00:00","url":"\/posts\/2021-05-07-parliament\/","wordCount":"1086","keywords":["open data","projects","politics","federal parliament"]}</script>
+<meta name=author content="Laurens Debackere">
+<link href=mailto:laurens.debackere@thundr.be rel=me>
+<link href=https://thundr.be rel=me>
+<link href=https://github.com/laurensdeb rel=me>
+<link href=https://twitter.com/0x8deb rel=me>
+</head>
+<body class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"><header class="flex justify-between py-6 font-semibold sm:items-center sm:py-10 text-neutral-800 dark:text-neutral">
+<div>
+<a href=/>
+<img src=/logo.png width=1172 height=298 class="max-w-[10rem] max-h-[10rem] object-scale-down object-left" alt=Thundr>
+</a>
+</div>
+<nav>
+<ul class="flex flex-col list-none sm:flex-row">
+<li class="mb-1 text-right sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href=/ title>Home</a>
+</li>
+<li class="mb-1 text-right sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href=/cv/ title="Curriculum vitae">CV</a>
+</li>
+<li class="mb-1 text-right sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href=/contact/ title="Get in touch">Contact</a>
+</li>
+<li class="mb-1 text-right sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href=/posts/ title="Blog Posts">Blog</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=flex-grow>
+<article class=max-w-prose>
+<header>
+<h1 class="mt-0 text-4xl font-extrabold text-neutral-800 dark:text-neutral">
+What’s up with our Federal Parliament? A look at the Chamber of Representatives through its data.
+</h1>
+<div class="mt-8 mb-12 text-base text-neutral-400 dark:text-neutral-500">
+<div class="flex flex-row items-center">
+<time datetime="2021-05-07 00:00:00 +0000 UTC">7 May 2021</time><span class="px-2 text-primary-500">&#183;</span><span title="Reading time">6 mins</span>
+</div>
+</div>
+</header>
+<section class="prose dark:prose-light">
+<p class="!mb-9 text-xl text-neutral-400 dark:text-neutral-500">
+The last few weeks I’ve been working on a project for the Datavisualisation course of <a href=https://twitter.com/BartMesuere>Bart Mesuere</a> along with four of my fellow students. Over the course of 12 weeks we’ve developed <a href=https://parlement.thundr.be>a Scraper/API</a> and built <a href=https://parlement-in-data.thundr.be>a number of very interesting visualizations</a> on the Chamber of Representatives of our Federal Parliament. In this post I wanted to go into detail about the data and story behind this project.
+</p>
+<p><img src=/img/posts/parliament-header.png alt></p>
+<h2 id=this-will-be-easy>This will be easy&mldr; <a class=heading-anchor href=#this-will-be-easy aria-label=Anchor>#</a></h2>
+<p><em>…or so we thought.</em></p>
+<p>The Chamber of Representatives has had an Open Data strategy since 2016 according to its website. <strong>However</strong>, our hopefulness quickly turned into despair upon seeing the actual <a href=https://data.dekamer.be>“Open Data Portal”</a>, the data in the API turned out to be <strong>woefully out-of-date</strong> and <strong>incomplete</strong>. Details on the legislation debated in the parliament were only available for the past legislature (2014-2019). Also, no specifics are given on the name votes in the plenary meetings (i.e., we couldn&rsquo;t answer what each member voted on a specific piece of legislation).</p>
+<h2 id=this-will-be-hard>This will be hard&mldr; <a class=heading-anchor href=#this-will-be-hard aria-label=Anchor>#</a></h2>
+<p><em>&mldr;back to square one.</em></p>
+<p>Being Computer Science students, we took on the challenge of building our own API. For this, our goal was to provide all the up-to-date data the current API lacks as well as offer it for a number of previous, historic legislatures too. Fortunately, the Chamber does offer <strong>HTML</strong> versions of the meeting notes for its <strong>plenary meetings</strong>. (<em>Don&rsquo;t start imagining anything fancy, these are simply <a href=https://www.dekamer.be/doc/PCRI/html/55/ip102x.html>exports</a> made from the Microsoft Word application that do mostly follow the same template.</em>)</p>
+<p><img src=/img/posts/image-meetingnotes.png alt="Sample Meeting Minutes from the Parliament"></p>
+<p>On a more <strong>technical</strong> note: We implemented the parsing logic in Python, aided by the <a href=https://pypi.org/project/beautifulsoup4/>BeautifulSoup 4</a> library. (Available under the MIT license on <a href=https://github.com/laurensdeb/Federal-Parliament-Scraper>Github</a>.) While the data from the meeting notes contains an enormous wealth of data, we also have to enrich this with information from a few other public databases provided by The Chamber (i.e., for details on the legislation such as authorship and thematic labeling and for information on questions such as the responding minister or department). With regards to party affiliation and demographics of the members, we’re using <a href=https://www.wikidata.org/wiki/Wikidata:Main_Page>WikiData</a> and <a href=https://wikipedia.org>Wikipedia</a>.</p>
+<p>The parser itself provides a JSON export, which we use to build an API (which you can find in a hosted version at <a href=https://parlement.thundr.be>parlement.thundr.be</a>). This build step is run on Github Actions (which, to our great joy, provides free build minutes to open-source projects), and publishes an updated version of the API using the latest meeting notes every weekday. Hosting is offered to us for free by <a href=https://netlify.com>Netlify</a> and <a href=https://cloudflare.com>CloudFlare</a>. For now, this seems to be holding up quite well against the growing popularity of our work.</p>
+<h2 id=okay-this-is-really-hard>Okay, this is really hard. <a class=heading-anchor href=#okay-this-is-really-hard aria-label=Anchor>#</a></h2>
+<p><em>But, we fixed it, right?</em></p>
+<p>Turns out building an API out of meeting notes that are still being written manually by the staff of the Chamber has a few extra <strong>complexities</strong>. We discovered quite some <strong>inconsistencies</strong> in the reports, mostly vote counts that were off with the names listed as having voted.</p>
+<p>However occasionally the mistakes in the report were more significant. Let’s have a look at the meeting notes of <a href="https://parlement-in-data.thundr.be/meeting?session=53&meeting=61">December 15th, 2011</a> and <a href="https://parlement-in-data.thundr.be/meeting?session=53&meeting=62">December 22nd, 2011</a>&mldr; When parsing the name votes in this meeting we noticed one very unusual name: “Jef Ramaekers”. While parsing the data from these meetings our parser errored out with a big warning: <strong>“Member not found”</strong>. After consulting the <a href=https://nl.wikipedia.org/wiki/Categorie:Kandidatenlijsten_verkiezingen_in_Belgi%C3%AB>electoral lists</a> for the legislature 2011-2014 we couldn’t find this member with any of the parties. However, a cursory Google search did learn us there is a former minister named <a href=https://nl.wikipedia.org/wiki/Jef_Ramaekers>Jef Ramaekers</a>, who unfortunately passed away in 2004.</p>
+<p><img src=https://upload.wikimedia.org/wikipedia/commons/6/68/Eerste_steenlegging_Atheneum_Hof_van_Riemen.png alt="Image of Jef Ramaekers (source: Wikimedia Commons)"></p>
+<p>Being <strong>outstanding citizens</strong> and all, we decided to fulfill our civic duties and e-mail the Chamber to get more details on this strange inclusion in the reported votes. Sadly, the archives of the Parliament were unable to provide us with an erratum. It seems to be, as we expected, a material error in the meeting notes. <em>Alas, no details on what actually happened here&mldr; But our scraper is able to accurately identify issues with the meeting notes, something which might even come in handy to help the parliament itself in the future.</em></p>
+<h2 id=how-can-we-improve-this->How can we improve this ? <a class=heading-anchor href=#how-can-we-improve-this- aria-label=Anchor>#</a></h2>
+<p>While it might be easy to blame the manual note-taking on all these issues we’ve experienced over the past few weeks, the absence of a proper open data strategy seems to be the real culprit here. While <a href=https://data.dekamer.be>efforts</a> have been made to start such an initiative, they unfortunately seem to have hit a dead end up to now.</p>
+<p>Perhaps our <a href=https://dekamer.be>Federal Parliament</a> could find inspiration in regional and local initiatives, such as the <a href=https://lokaalbestuur.vlaanderen.be/lokale-besluiten-als-gelinkte-open-data>LBLOD project</a> in Flanders. Here, manual notetakers are aided using Linked Data to create more structured versions of their traditional meeting notes during municipal council meetings.</p>
+<p>Especially in times when many parties are advocating for an overhaul of our voting system, it is paramount to give people the right data to make an informed choice in the voting booth. With big ideas like making the switch from compulsory to voluntary voting and getting rid of the so-called “list votes” (where a voter could give their vote to an entire party instead of an individual member), properly informing voters is becoming more important than ever before.</p>
+<p>If you’re interested in helping out this initiative, be sure to check out our <a href=https://github.com/laurensdeb/Federal-Parliament-Scraper>Github</a> repository. Or, for the less tech-savy among us, get in touch with your representative in the parliament and help us advocate for better information on our federal politics. More information on the API that was built on top of all this can be found <a href=https://parlement.thundr.be>here</a></p>
+<h2 id=bonus-explore-our-visualisations>Bonus: Explore our visualisations <a class=heading-anchor href=#bonus-explore-our-visualisations aria-label=Anchor>#</a></h2>
+<p><em>Now that you&rsquo;ve read this huge explainer, it would be sad if we didn&rsquo;t reward you for your time, don&rsquo;t you agree?</em></p>
+<p>On top of the scraper and API outlined above, we&rsquo;ve constructed several visualizations on our Chamber of Representatives <a href=https://parlement-in-data.thundr.be>as a whole</a>, <a href=https://parlement-in-data.thundr.be/party>at a party level</a> and <a href=https://parlement-in-data.thundr.be/member>on the individual MP&rsquo;s</a>. For this, we were guided by the lecturer of this course, <a href=https://twitter.com/BartMesuere>Bart Mesuere</a>, with a lot of valuable insights and feedback.</p>
+<h2 id=special-thanks>Special thanks <a class=heading-anchor href=#special-thanks aria-label=Anchor>#</a></h2>
+<p>The project detailed in this blog post was built together with four of my fellow <a href=https://informatica.ugent.be>Computer Science</a> students at <a href=https://ugent.be>Ghent University</a>, to whom I want to express my special thanks for their contributions to the succes of this massive undertaking:</p>
+<ul>
+<li>Niels Dossche</li>
+<li>Glenn Feys</li>
+<li>Tibo Vande Moortele</li>
+<li>Chato De Veirman</li>
+</ul>
+<p>Also a big thank you to Bart Mesuere, and of course to everyone who has engaged with our visualizations and data over the last few days.</p>
+</section>
+<footer class=pt-8>
+<div class=flex>
+<div class=place-self-center>
+<div class="text-[0.6rem] leading-3 text-neutral-400 dark:text-neutral-500 uppercase">
+Author
+</div>
+<div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+Laurens Debackere
+</div>
+<div class="text-sm text-neutral-700 dark:text-neutral-400">Student MSc. Computer Science - API & Open Data Nerd - Obsessed with cats.</div>
+<div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=mailto:laurens.debackere@thundr.be target=_blank alt=Email rel="me noopener noreferrer">
+<span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="at" class="svg-inline--fa fa-at fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M256 8C118.941 8 8 118.919 8 256c0 137.059 110.919 248 248 248 48.154.0 95.342-14.14 135.408-40.223 12.005-7.815 14.625-24.288 5.552-35.372l-10.177-12.433c-7.671-9.371-21.179-11.667-31.373-5.129C325.92 429.757 291.314 440 256 440c-101.458.0-184-82.542-184-184S154.542 72 256 72c100.139.0 184 57.619 184 160 0 38.786-21.093 79.742-58.17 83.693-17.349-.454-16.91-12.857-13.476-30.024l23.433-121.11C394.653 149.75 383.308 136 368.225 136h-44.981a13.518 13.518.0 00-13.432 11.993l-.01.092c-14.697-17.901-40.448-21.775-59.971-21.775-74.58.0-137.831 62.234-137.831 151.46.0 65.303 36.785 105.87 96 105.87 26.984.0 57.369-15.637 74.991-38.333 9.522 34.104 40.613 34.103 70.71 34.103C462.609 379.41 504 307.798 504 232 504 95.653 394.023 8 256 8zm-21.68 304.43c-22.249.0-36.07-15.623-36.07-40.771.0-44.993 30.779-72.729 58.63-72.729 22.292.0 35.601 15.241 35.601 40.77.0 45.061-33.875 72.73-58.161 72.73z"/></svg>
+</span>
+</a>
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=https://thundr.be target=_blank alt=Link rel="me noopener noreferrer">
+<span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96.0-59.27-59.26-59.27-155.7.0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757.0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037.0 01-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482.0 0120.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96.0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454.0 0020.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037.0 00-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639.0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg>
+</span>
+</a>
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=https://github.com/laurensdeb target=_blank alt=Github rel="me noopener noreferrer">
+<span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=https://twitter.com/0x8deb target=_blank alt=Twitter rel="me noopener noreferrer">
+<span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645.0 138.72-105.583 298.558-298.558 298.558-59.452.0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055.0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421.0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391.0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04.0-57.828 46.782-104.934 104.934-104.934 30.213.0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</article>
+</main><footer class=py-10>
+<nav class="pb-4 text-base font-medium text-neutral-400 dark:text-neutral-500">
+<ul class="flex flex-col list-none sm:flex-row">
+<li class="mb-1 sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href title></a>
+</li>
+</ul>
+</nav>
+<div class="flex justify-between">
+<div>
+<p class="text-sm text-neutral-400 dark:text-neutral-500">
+© Thundr
+</p>
+</div>
+</div>
+<p class="text-m text-neutral-500 mt-8">
+Thundr Comm.V.
+<p class="text-m text-neutral-400">
+Oudekerkstraat 32
+</p>
+<p class="text-m text-neutral-400">
+8200 Brugge
+</p>
+<p class="prose text-m text-neutral-400">
+<a href=mailto:hello@thundr.be>hello@thundr.be</a>
+</p>
+<p class="text-m text-neutral-400 mt-6">
+<b>KBO</b> BE0778.516.258
+</p>
+</p>
+</footer>
+</body>
+</html>
