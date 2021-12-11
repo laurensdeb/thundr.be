@@ -6,6 +6,11 @@ permalink: /posts/2020/05/parliament
 showAuthor: true
 header:
   image: parliament-header.png
+sharingLinks: 
+- twitter
+- facebook
+- linkedin
+- email
 tags:
   - open data
   - projects
