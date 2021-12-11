@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@700;900&family=Overpass:wght@300;400;500&display=swap');
+
+.h1 {
+    font-family: "Chivo", sans-serif;
+}
+nav {
+    font-family: "Chivo", sans-serif;
+}
+body,html{
+    font-family: "Overpass", sans-serif;
+}
