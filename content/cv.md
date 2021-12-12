@@ -18,21 +18,27 @@ Laurens is a Software Developer with experience in building microservices follow
 
 <h1>{{< icon "briefcase" >}} <span class="relative inline-block align-text-bottom icon">Work experience</span></h1>
 
-## October 2021 - Present: Software Engineer - Solid & Linked Data
-**Digitaal Vlaanderen** (Flemish Government)
+## Software Engineer - Solid & Linked Data
+<p>
+  October 2021 - Present &vert; <b>Digitaal Vlaanderen</b> (Flemish Government)
+</p>
 
 As a continuation of my internship I currently advise on the integration of Solid Pods in the service offering of the MAGDA Platform, both on a technical and architectural level.
 
-## Summer 2021: Software Engineer - Solid & Linked Data (Internship)
-**Digitaal Vlaanderen** (Flemish Government)
+## Software Engineer - Solid & Linked Data (Internship)
+<p>
+  Summer 2021 &vert; <b>Digitaal Vlaanderen</b> (Flemish Government)
+</p>
 
 During this summer internship I worked as a developer with Digitaal Vlaanderen's MAGDA Platform, in this context I was responsible for two projects:
 
 * Developing a proof-of-concept Solid integration platform, allowing MAGDA services to transparently integrate and interact with the information stored in the Pods.
 * Automating the MAGDA Statuspage through the monitoring information provided by the OpenShift container platform.
 
-## Summer 2020: Software Engineer (Internship)
-**Informatie Vlaanderen** (Flemish Government)
+## Software Engineer (Internship)
+<p>
+  Summer 2020 &vert; <b>Informatie Vlaanderen</b> (Flemish Government)
+</p>
 
 During this summer internship I worked as a developer on the modernisation team for Informatie Vlaanderen’s MAGDA platform, a few of the cases I worked on:
 
@@ -42,8 +48,10 @@ During this summer internship I worked as a developer on the modernisation team 
 * Implementation of an OAuth API client for our integration testing project.
 * Development of a proof-of-concept service for connecting MAGDA to Solid data pods.
 
-## Summer 2019: Software Engineer (Internship)
-**Informatie Vlaanderen** (Flemish Government)
+## Software Engineer (Internship)
+<p>
+  Summer 2019 &vert; <b>Informatie Vlaanderen</b> (Flemish Government)
+</p>
 
 Over the course of the summer I worked on the modernisation effort of Informatie Vlaanderen’s MAGDA platform. On the project I was responsible for porting a number of existing libraries to JDK 11 and Spring Boot and aiding development of a new Business Service for the platform. Alongside a team of experienced architects and developers, I also reworked our Audit Logging technology stack using RabbitMQ and Spring’s AMQP integration to provide optimised asynchronous logging for our new business services with use of Spring Boot starters to facilitate future integration in new projects. I also helped deliver an automated post-deployment integration testing suite with Slack and JFrog Artifactory integration to automatically publish integration test reports for new builds.
 
@@ -57,14 +65,34 @@ Technologies used:
 * Cucumber BDD-testing
 * BitBucket Pipelines
 
-## Summer 2018: Information Management (Internship)
-**Informatie Vlaanderen** (Flemish Government)
-
+## Information Management (Internship)
+<p>
+  Summer 2018 &vert; <b>Informatie Vlaanderen</b> (Flemish Government)
+</p>
 Over the course of the summer I participated in redesigning and rewriting the technical documentation of the MAGDA platform. I also developed internal tooling and templating to facilitate the documentation process and developed a new application for managing metadata on the API services of Informatie Vlaanderen.
 
-<br />
 
-<h1>{{< icon "book" >}} <span class="relative inline-block align-text-bottom icon">Education</span></h1>
+<h1 style="margin-top: 5rem !important">{{< icon "book" >}} <span class="relative inline-block align-text-bottom icon">Education</span></h1>
 
-* BSc. Computer Science, Ghent University, 2017-2020
-* MSc. Computer Science, Ghent University, 2020-2022 (expected)
+## Bachelor of Science in Computer Science
+<p>
+  2017 - 2020 &vert; <b>Ghent University</b>
+</p>
+
+Graduated Magna Cum Laude in the minor "Security & Parallel Systems".
+
+## Master of Science in Computer Science
+<p>
+  2017 - 2022 (Expected) &vert; <b>Ghent University</b>
+</p>
+
+* Student representative in the <b>Computer Science Programme Committee</b>, the <b>Education Committee of the Faculty of Sciences</b>, the <b>ICT User's Committee</b> of the Board of Governors of the University.
+* Elective courses:
+    - Software Hacking & Protection
+    - Recommender Systems
+    - Image Processing
+    - Financial and Cost Reporting in Enterprises
+* Noteworthy projects:
+    - [**Our Parliament in Data**](https://parliamentdata.be): Advanced data visualisation based on a self-developed scraper of the meeting minutes obtained from the Federal Parliament.
+    - **Collimator detection in medical imaging**: Project for the course "Image Processing" in collaboration with Agfa Medical Imaging, where we developed a Convolutional Neural Network to detect artifacts in medical imaging produced by X-Ray scanners.
+* Thesis: <b>"Evaluating and Enhancing Authorization Mechanisms for the Solid Ecosystem"</b> supervised by Ruben Verborgh, Ruben Taelman and Pieter Colpaert.
