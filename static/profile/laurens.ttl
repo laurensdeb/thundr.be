@@ -22,6 +22,11 @@
                  <https://www.linkedin.com/in/laurensdebackere/>;
     dbo:orcidId "0000-0002-5401-418X";
     foaf:workplaceHomepage <https://thundr.be>,
-                           <https://digitaalvlaanderen.be>;
+                           <https://www.vlaanderen.be/digitaal-vlaanderen>;
     org:memberOf <https://data.vlaanderen.be/doc/organisatie/OVO002949>.
 
+<https://data.vlaanderen.be/id/organisatie/OVO002949> 
+    a foaf:Agent, org:Organization;
+    rdfs:label "agentschap Digitaal Vlaanderen"@nl;
+    skos:prefLabel "agentschap Digitaal Vlaanderen"@nl;
+    foaf:homepage <https://www.vlaanderen.be/digitaal-vlaanderen>.
