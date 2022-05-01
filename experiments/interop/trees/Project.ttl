@@ -1,0 +1,15 @@
+PREFIX uuid: <urn:uuid>
+PREFIX shapetrees: <http://www.w3.org/ns/shapetrees#>
+PREFIX solidshapes: <https://thundr.be/experiments/interop/shapes/>
+PREFIX solidtrees: <https://thundr.be/experiments/interop/trees/>
+
+solidtrees:Project
+  a shapetrees:ShapeTree ;
+  shapetrees:expectsType shapetrees:Resource ;
+  shapetrees:shape solidshapes:Project ;
+  shapetrees:references uuid:54b5e4f6-c6b5-4c9a-b885-cbf69d08370d .
+
+uuid:54b5e4f6-c6b5-4c9a-b885-cbf69d08370d
+  shapetrees:hasShapeTree solidtrees:Task ;
+  shapetrees:viaShapePath
+    "@<https://thundr.be/experiments/interop/shapes/Project>~<https://vocab.example/project-management/hasTask>" .

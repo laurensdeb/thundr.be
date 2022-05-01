@@ -1,0 +1,8 @@
+PREFIX shapetrees: <http://www.w3.org/ns/shapetrees#>
+PREFIX solidshapes: <https://thundr.be/experiments/interop/shapes/>
+PREFIX solidtrees: <https://thundr.be/experiments/interop/trees/>
+
+solidtrees:Task.ttl
+  a shapetrees:ShapeTree ;
+  shapetrees:expectsType shapetrees:Resource ;
+  shapetrees:shape solidshapes:Task.shex .
