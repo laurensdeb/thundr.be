@@ -10,7 +10,7 @@ showReadingTime: false
 showEdit: false
 ---
 {{< lead >}}
-Laurens Debackere is a Computer Science student at Ghent University. In 2021 he started offering IT consultancy services for businesses interested in using Solid and Linked Data to optimize their operations and improve user experience.
+Laurens Debackere is a Computer Scientist. In 2021 he started offering IT consultancy services for businesses interested in using Solid and Linked Data to optimize their operations and improve user experience.
 {{< /lead >}}
 ![Cloud in the sky.](/img/laurens.jpg)
 Laurens is a Software Developer with experience in building microservices following the DevOps principles, using modern cloud-native technologies like Docker, Kubernetes and Spring Boot. While obtaining his Bachelor in Computer Science he first learned about the [Solid Project](https://solidproject.org), and has since gathered experience with the technology both in server-side contexts as well as in client-side applications. In the context of his thesis he is researching ways to adapt the Solid specification to enterprise settings, while retaining the original principles of data governance and interoperability at the heart of the project.
@@ -83,7 +83,7 @@ Graduated Magna Cum Laude in the minor "Security & Parallel Systems".
 
 ## Master of Science in Computer Science
 <p>
-  2017 - 2022 (Expected) &vert; <b>Ghent University</b>
+  2017 - 2022 &vert; <b>Ghent University</b>
 </p>
 
 * Student representative in the <b>Computer Science Programme Committee</b>, the <b>Education Committee of the Faculty of Sciences</b>, the <b>ICT User's Committee</b> of the Board of Governors of the University.
@@ -95,4 +95,4 @@ Graduated Magna Cum Laude in the minor "Security & Parallel Systems".
 * Noteworthy projects:
     - [**Our Parliament in Data**](https://parliamentdata.be): Advanced data visualisation based on a self-developed scraper of the meeting minutes obtained from the Federal Parliament.
     - **Collimator detection in medical imaging**: Project for the course "Image Processing" in collaboration with Agfa Medical Imaging, where we developed a Convolutional Neural Network to detect artifacts in medical imaging produced by X-Ray scanners.
-* Thesis: <b>"Evaluating and Enhancing Authorization Mechanisms for the Solid Ecosystem"</b> supervised by Ruben Verborgh, Ruben Taelman and Pieter Colpaert.
+* Thesis: <b>"Enforcing Data Protection in Solid: A Policy-Oriented Framework"</b> supervised by Ruben Verborgh, Ruben Taelman and Pieter Colpaert.
