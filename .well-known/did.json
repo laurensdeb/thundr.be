@@ -1,0 +1,48 @@
+{
+  "id": "did:web:thundr.be",
+  "@context": [
+    "https://www.w3.org/ns/did/v1",
+    {
+      "@base": "did:web:thundr.be"
+    }
+  ],
+  "service": [
+    {
+      "id": "#linkeddomains",
+      "type": "LinkedDomains",
+      "serviceEndpoint": {
+        "origins": [
+          "https://thundr.be/"
+        ]
+      }
+    },
+    {
+      "id": "#hub",
+      "type": "IdentityHub",
+      "serviceEndpoint": {
+        "instances": [
+          "https://hub.did.msidentity.com/v1.0/9263b97e-9098-478e-a31f-b111ec3fecbc"
+        ]
+      }
+    }
+  ],
+  "verificationMethod": [
+    {
+      "id": "#0a044b39127d4293b16c779e7d888666vcSigningKey-6ada2",
+      "controller": "did:web:thundr.be",
+      "type": "EcdsaSecp256k1VerificationKey2019",
+      "publicKeyJwk": {
+        "crv": "secp256k1",
+        "kty": "EC",
+        "x": "eCNrKkST8qooUYhO8c07XfevZQ0mLB9fnhsmeGSC9fA",
+        "y": "-tsc0g0TrqYqtO_1LFgcoT-Z52-mGXT7l2VCG5p51yc"
+      }
+    }
+  ],
+  "authentication": [
+    "#0a044b39127d4293b16c779e7d888666vcSigningKey-6ada2"
+  ],
+  "assertionMethod": [
+    "#0a044b39127d4293b16c779e7d888666vcSigningKey-6ada2"
+  ]
+}
