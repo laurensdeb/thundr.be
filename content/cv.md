@@ -13,17 +13,31 @@ showEdit: false
 Laurens Debackere is a Computer Scientist. In 2021 he started offering IT consultancy services for businesses interested in using Solid and Linked Data to optimize their operations and improve user experience.
 {{< /lead >}}
 ![Cloud in the sky.](/img/laurens.jpg)
-Laurens is a Software Developer with experience in building microservices following the DevOps principles, using modern cloud-native technologies like Docker, Kubernetes and Spring Boot. While obtaining his Bachelor in Computer Science he first learned about the [Solid Project](https://solidproject.org), and has since gathered experience with the technology both in server-side contexts as well as in client-side applications. In the context of his thesis he is researching ways to adapt the Solid specification to enterprise settings, while retaining the original principles of data governance and interoperability at the heart of the project.
+Laurens is a Software Developer with experience in building microservices following the DevOps principles, using modern cloud-native technologies like Docker, Kubernetes and Spring Boot. While obtaining his Bachelor in Computer Science he first learned about the [Solid Project](https://solidproject.org), and has since gathered experience with the technology both in server-side contexts as well as in client-side applications. In the context of his thesis he researched ways to adapt the Solid specification to enterprise settings, while retaining the original principles of data governance and interoperability at the heart of the project. Currently, Laurens is active as ICT Solution Architect overseeing a five person development team realizing production-ready Solid use-cases for the Digitaal Vlaanderen and advises the [Flemish Data Utility Company](https://www.vlaanderen.be/digitaal-vlaanderen/het-vlaams-datanutsbedrijf/the-flemish-data-utility-company) on the Solid specification.
 <hr />
 
 <h1>{{< icon "briefcase" >}} <span class="relative inline-block align-text-bottom icon">Work experience</span></h1>
-
-## Software Engineer - Solid & Linked Data
+  
+## ICT Solution Architect
 <p>
-  October 2021 - Present &vert; <b>Digitaal Vlaanderen</b> (Flemish Government)
+  January 2023 - Present &vert; <b>Digitaal Vlaanderen</b> (Flemish Government)
+</p>
+  
+ICT Solution Architect on the MAGDA Solid development team, overseeing development and operations of technical backends for the Solid MVPs of the Flemish Data Utility Company.
+  
+## Solid Technology Expert
+<p>
+  January 2023 - Present &vert; <b>Flemish Data Utility Company</b> (Flemish Government)
+</p>
+  
+Solid Technology Expert, advising the Flemish Data Utility Company on the Solid specification and representing the Flemish government in the W3C Solid Community Group.
+
+## ICT Expert Solid & Linked Data
+<p>
+  October 2021 - December 2022 &vert; <b>Digitaal Vlaanderen</b> (Flemish Government)
 </p>
 
-As a continuation of my internship I currently advise on the integration of Solid Pods in the service offering of the MAGDA Platform, both on a technical and architectural level.
+As a continuation of my internship I advised on the integration of Solid Pods in the service offering of the MAGDA Platform, both on a technical and architectural level, and oversaw the launch of a new internal Solid development team for realizing the Solid MVPs of the Flemish Data Utility Company.
 
 ## Software Engineer - Solid & Linked Data (Internship)
 <p>
@@ -86,6 +100,8 @@ Graduated Magna Cum Laude in the minor "Security & Parallel Systems".
   2017 - 2022 &vert; <b>Ghent University</b>
 </p>
 
+Graduated Summa Cum Laude.
+  
 * Student representative in the <b>Computer Science Programme Committee</b>, the <b>Education Committee of the Faculty of Sciences</b>, the <b>ICT User's Committee</b> of the Board of Governors of the University.
 * Elective courses:
     - Software Hacking & Protection
