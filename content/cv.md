@@ -1,7 +1,7 @@
 ---
 title: "Curriculum vitae"
 draft: false
-description: "Some real-life Congo examples."
+description: "Curriculum vitae of Laurens Debackere, ICT Solution Architect"
 showAuthor: true
 slug: "cv"
 tags: ["users", "sample"]
